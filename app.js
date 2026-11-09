@@ -254,7 +254,16 @@ function joinModal() {
 
 async function api(url, options = {}) {
   const response = await fetch(url, { ...options, headers: { 'Content-Type': 'application/json', ...(options.headers || {}) } });
-  const data = await response.json();
+  const contentType = response.headers.get('content-type') || '';
+  if (!contentType.includes('application/json')) {
+    throw new Error('Multiplayer is unavailable on this static host. Run or deploy the Quizroom Node server to use game rooms.');
+  }
+  let data;
+  try {
+    data = await response.json();
+  } catch {
+    throw new Error('The game server returned an invalid response. Please try again.');
+  }
   if (!response.ok) throw new Error(data.error || 'Something went wrong.');
   return data;
 }
