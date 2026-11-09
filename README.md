@@ -24,6 +24,6 @@ Requires Node.js 18 or newer. Start the app with:
 npm start
 ```
 
-Open http://localhost:3000. Create a pack or use the included general-knowledge pack, then choose **Host a game**. Friends can join with the six-digit room code from another browser or device that can reach the same server.
+Open the link. Create a pack or use the included general-knowledge pack, then choose **Host a game**. Friends can join with the six-digit room code from another browser or device that can reach the same server.
 
 Packs and solo best scores are saved in the browser's local storage. Running the included Node server is optional; the same PeerJS room connection is used locally.
