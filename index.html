@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f6f7f3">
+    <title>Quizroom | Make a little competition</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/modes.css">
+    <link rel="stylesheet" href="/arcade.css">
+    <link rel="stylesheet" href="/tower-defense.css">
+  </head>
+  <body>
+    <div class="shell">
+      <aside class="sidebar">
+        <a class="brand" href="#home" aria-label="Quizroom home">
+          <span class="brand-mark"><i></i><i></i><i></i><i></i></span>
+          <span>quizroom<span class="brand-period">.</span></span>
+        </a>
+        <div class="side-label">WORKSPACE</div>
+        <nav class="main-nav" aria-label="Main navigation">
+          <button class="nav-link is-active" data-page="home"><span class="nav-icon">⌂</span>Overview</button>
+          <button class="nav-link" data-page="games"><span class="nav-icon">◈</span>Games</button>
+          <button class="nav-link" data-page="packs"><span class="nav-icon">▤</span>My packs<span id="pack-count" class="nav-count">0</span></button>
+          <button class="nav-link" data-page="create"><span class="nav-icon">＋</span>Create a pack</button>
+        </nav>
+        <div class="sidebar-foot">
+          <div class="online-dot"></div><span>Room server ready</span>
+          <div class="profile"><div class="profile-avatar">Q</div><div><strong>Quizmaker</strong><small>Free account</small></div><span class="profile-more">···</span></div>
+        </div>
+      </aside>
+      <main class="main-area">
+        <header class="topbar">
+          <div class="breadcrumb"><span>Workspace</span><span class="crumb-slash">/</span><strong id="page-title">Overview</strong></div>
+          <div class="top-actions">
+            <button class="button button-quiet" data-action="open-join"><span class="join-glyph">↗</span> Join a game</button>
+            <button class="button button-dark" data-action="open-host"><span class="host-glyph">▶</span> Host a game</button>
+          </div>
+        </header>
+        <div id="app" class="content"></div>
+      </main>
+    </div>
+    <div id="modal-root"></div>
+    <script src="/arcade.js" defer></script>
+    <script src="/app.js" defer></script>
+  </body>
+</html>
