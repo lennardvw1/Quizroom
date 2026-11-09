@@ -253,10 +253,13 @@ function joinModal() {
 }
 
 async function api(url, options = {}) {
+  if (window.QuizroomPeer?.configured) {
+    return window.QuizroomPeer.request(url, options);
+  }
   const response = await fetch(url, { ...options, headers: { 'Content-Type': 'application/json', ...(options.headers || {}) } });
   const contentType = response.headers.get('content-type') || '';
   if (!contentType.includes('application/json')) {
-    throw new Error('Multiplayer is unavailable on this static host. Run or deploy the Quizroom Node server to use game rooms.');
+    throw new Error(window.QuizroomPeer?.error || 'The room service is unavailable. Check your internet connection and refresh.');
   }
   let data;
   try {
@@ -350,6 +353,7 @@ window.addEventListener('arcade:return', () => {
 function leaveRoom() {
   clearInterval(roomPoll);
   roomPoll = null;
+  window.QuizroomPeer?.leave(roomSession?.code);
   roomSession = null;
   currentRoom = null;
   navigate('home');

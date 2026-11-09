@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#f6f7f3">
-    <title>Quizroom | Make a little competition</title>
+    <title>Quizroom | Quiz hosting app</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -28,7 +28,7 @@
           <button class="nav-link" data-page="create"><span class="nav-icon">＋</span>Create a pack</button>
         </nav>
         <div class="sidebar-foot">
-          <div class="online-dot"></div><span>Room server ready</span>
+          <div class="online-dot"></div><span>Room play ready</span>
           <div class="profile"><div class="profile-avatar">Q</div><div><strong>Quizmaker</strong><small>Free account</small></div><span class="profile-more">···</span></div>
         </div>
       </aside>
@@ -44,6 +44,8 @@
       </main>
     </div>
     <div id="modal-root"></div>
+    <script src="https://cdn.jsdelivr.net/npm/peerjs@1.5.4/dist/peerjs.min.js" defer></script>
+    <script src="./peer-rooms.js" defer></script>
     <script src="./arcade.js" defer></script>
     <script src="./app.js" defer></script>
   </body>
